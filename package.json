@@ -24,6 +24,7 @@
   "type": "module",
   "homepage": "https://github.com/askorutin26/frontend-project-lvl2#readme",
   "devDependencies": {
+    "@jest/globals": "^27.0.6",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",

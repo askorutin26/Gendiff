@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { expect, test } from '@jest/globals';
 import getFixturePath from '../src/makePath.js';
 import genDiff from '../src/showDiff.js';
 
