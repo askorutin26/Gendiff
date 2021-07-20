@@ -1,12 +1,17 @@
-import fs from 'fs';
 import { expect, test } from '@jest/globals';
-import getFixturePath from '../src/makePath.js';
 import genDiff from '../src/showDiff.js';
 
+const expected = `{
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}`;
 const file1 = 'file1.json';
 const file2 = 'file2.json';
 
-const correctResult = fs.readFileSync(getFixturePath('resultOfTest.txt'), 'utf-8');
 test('genDiffWorks', () => {
-  expect(genDiff(file1, file2)).toEqual(correctResult);
+  expect(genDiff(file1, file2)).toBe(expected);
 });
