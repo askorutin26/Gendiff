@@ -1,5 +1,8 @@
 {
   "name": "@hexlet/code",
+  "jest": {
+    "verbose": true
+  },
   "version": "1.0.0",
   "description": "compares two files and show difference ",
   "bin": {
