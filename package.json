@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/askorutin26/frontend-project-lvl2/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/askorutin26/frontend-project-lvl2#readme"
 }
