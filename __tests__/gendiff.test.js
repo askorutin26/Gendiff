@@ -1,20 +1,20 @@
 import { expect, test } from '@jest/globals';
 import genDiff from '../src/showDiff.js';
+import parseFile from '../src/parsers.js';
+import getFixturePath from '../src/makePath.js';
 
-const expected = `{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
-}`;
-const file1Json = 'file1.json';
-const file2Json = 'file2.json';
-const file1Yml = 'file1.yml';
-const file2Yml = 'file2.yml';
+const file1NestedPath = 'file1Nested.json';
+const file2NestedPath = 'file2Nested.json';
 
-test('genDiffWorks', () => {
-  expect(genDiff(file1Json, file2Json)).toBe(genDiff(file1Yml, file2Yml));
-  expect(genDiff(file1Json, file2Json)).toBe(expected);
+const correctStylishPath = getFixturePath('stylishNestedCorrect.txt');
+const rightForNestedStylish = parseFile(correctStylishPath);
+
+const correctPlainPath = getFixturePath('plainNestedCorrect.txt');
+const rightForNestedPlain = parseFile(correctPlainPath);
+
+test('stylishDiffWorks', () => {
+  expect(genDiff(file1NestedPath, file2NestedPath, 'stylish')).toBe(rightForNestedStylish);
+});
+test('plainDiffWorks', () => {
+  expect(genDiff(file1NestedPath, file2NestedPath, 'plain')).toBe(rightForNestedPlain);
 });
