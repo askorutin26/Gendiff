@@ -3,14 +3,16 @@ import path from 'path';
 import yaml from 'js-yaml';
 
 const parseFile = (filePath) => {
-  const ext = path.extname(filePath);
+  const format = path.extname(filePath);
   const fileData = fs.readFileSync(filePath, 'utf-8');
-  switch (ext) {
+  switch (format) {
     case '.yml':
     case '.yaml':
       return (yaml.load(fileData));
     case '.json':
       return (JSON.parse(fileData));
+    case '.txt':
+      return fileData;
     default:
       throw new Error(console.log(filePath));
   }
