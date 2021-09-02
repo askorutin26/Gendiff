@@ -20,19 +20,19 @@
 
 ### Examples of using
 
-How it works:
+## How it works:
 [![asciicast](https://asciinema.org/a/424579.svg)](https://asciinema.org/a/424579)
 
-Difference between yml files:
+## Difference between yml files:
 [![asciicast](https://asciinema.org/a/433690.svg)](https://asciinema.org/a/433690)
 
-Difference between nested-sctructured files:
+## Difference between nested-sctructured files:
 [![asciicast](https://asciinema.org/a/433692.svg)](https://asciinema.org/a/433692)
 
-Difference between files; plain format:
+## Difference between files; plain format:
 [![asciicast](https://asciinema.org/a/433693.svg)](https://asciinema.org/a/433693)
 
-Difference between files; json format:
+## Difference between files; json format:
 [![asciicast](https://asciinema.org/a/433694.svg)](https://asciinema.org/a/433694)
 
 
