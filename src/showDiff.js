@@ -3,7 +3,7 @@ import buildDiffTree from './buildDiffTree.js';
 import formatData from './formatters/index.js';
 import getPath from './makePath.js';
 
-const genDiff = (file1, file2, formatter) => {
+const genDiff = (file1, file2, formatter = 'stylish') => {
   const file1Path = getPath(file1);
   const file2Path = getPath(file2);
 
