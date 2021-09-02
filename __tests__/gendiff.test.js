@@ -9,22 +9,22 @@ const nestedJson2 = 'file2Nested.json';
 const nestedYml1 = 'file1Nested.yml';
 const nestedYml2 = 'file2Nested.yml';
 
-const correctStylishPath = getFixturePath('stylishNestedCorrect.txt');
-const rightForNestedStylish = parseFile(correctStylishPath);
+const correctStylishPath = getFixturePath('stylishCorrect.txt');
+const rightForStylish = parseFile(correctStylishPath);
 
-const correctPlainPath = getFixturePath('plainNestedCorrect.txt');
-const rightForNestedPlain = parseFile(correctPlainPath);
+const correctPlainPath = getFixturePath('plainCorrect.txt');
+const rightForPlain = parseFile(correctPlainPath);
 
 const correctJsonPath = getFixturePath('jsonCorrect.txt');
 const rigthForJson = parseFile(correctJsonPath);
 
 test('stylishDiffWorks', () => {
-  expect(genDiff(nestedJson1, nestedJson2, 'stylish')).toBe(rightForNestedStylish);
-  expect(genDiff(nestedYml1, nestedYml2, 'stylish')).toBe(rightForNestedStylish);
+  expect(genDiff(nestedJson1, nestedJson2, 'stylish')).toBe(rightForStylish);
+  expect(genDiff(nestedYml1, nestedYml2, 'stylish')).toBe(rightForStylish);
 });
 test('plainDiffWorks', () => {
-  expect(genDiff(nestedJson1, nestedJson2, 'plain')).toBe(rightForNestedPlain);
-  expect(genDiff(nestedYml1, nestedYml2, 'plain')).toBe(rightForNestedPlain);
+  expect(genDiff(nestedJson1, nestedJson2, 'plain')).toBe(rightForPlain);
+  expect(genDiff(nestedYml1, nestedYml2, 'plain')).toBe(rightForPlain);
 });
 test('jsonDiffWorks', () => {
   expect(genDiff(nestedJson1, nestedJson2, 'json')).toBe(rigthForJson);
