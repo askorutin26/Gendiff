@@ -1,10 +1,8 @@
-import { fileURLToPath } from 'url';
-import * as path from 'path';
-import { dirname } from 'path';
+import path from 'path';
+import process from 'process';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const getPath = (fileName) => path.resolve(process.cwd(), fileName);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const getFullPath = (filePath) => getPath(filePath);
 
-export default getFixturePath;
+export default getFullPath;

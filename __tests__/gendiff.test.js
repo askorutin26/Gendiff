@@ -1,26 +1,29 @@
 import { expect, test } from '@jest/globals';
-import fs from 'fs';
-import genDiff from '../src/showDiff.js';
+import { fileURLToPath } from 'url';
+import * as path from 'path';
+import { dirname } from 'path';
 import parseFile from '../src/parsers.js';
-import getFixturePath from '../src/makePath.js';
+import genDiff from '../src/showDiff.js';
 
-const nestedJson1 = 'file1Nested.json';
-const nestedJson2 = 'file2Nested.json';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const nestedYml1 = 'file1Nested.yml';
-const nestedYml2 = 'file2Nested.yml';
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+
+const nestedJson1 = getFixturePath('file1Nested.json');
+const nestedJson2 = getFixturePath('file2Nested.json');
+
+const nestedYml1 = getFixturePath('file1Nested.yml');
+const nestedYml2 = getFixturePath('file2Nested.yml');
 
 const correctStylishPath = getFixturePath('stylishCorrect.txt');
-const correctStylishData = fs.readFileSync(correctStylishPath, 'utf-8');
-const rightForStylish = parseFile(correctStylishPath, correctStylishData);
+const rightForStylish = parseFile(correctStylishPath);
 
 const correctPlainPath = getFixturePath('plainCorrect.txt');
-const correctPlainData = fs.readFileSync(correctPlainPath, 'utf-8');
-const rightForPlain = parseFile(correctPlainPath, correctPlainData);
+const rightForPlain = parseFile(correctPlainPath);
 
 const correctJsonPath = getFixturePath('jsonCorrect.txt');
-const correctJsonData = fs.readFileSync(correctJsonPath, 'utf-8');
-const rigthForJson = parseFile(correctJsonPath, correctJsonData);
+const rigthForJson = parseFile(correctJsonPath);
 
 test('stylishDiffWorks', () => {
   expect(genDiff(nestedJson1, nestedJson2, 'stylish')).toBe(rightForStylish);
