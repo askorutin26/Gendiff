@@ -18,9 +18,8 @@
 
 `$make link`
 
-### Examples of using
 
-## How it works:
+#### How it works:
 [![asciicast](https://asciinema.org/a/424579.svg)](https://asciinema.org/a/424579)
 
 #### Difference between yml files:
