@@ -1,4 +1,5 @@
 import { expect, test } from '@jest/globals';
+import fs from 'fs';
 import genDiff from '../src/showDiff.js';
 import parseFile from '../src/parsers.js';
 import getFixturePath from '../src/makePath.js';
@@ -10,13 +11,16 @@ const nestedYml1 = 'file1Nested.yml';
 const nestedYml2 = 'file2Nested.yml';
 
 const correctStylishPath = getFixturePath('stylishCorrect.txt');
-const rightForStylish = parseFile(correctStylishPath);
+const correctStylishData = fs.readFileSync(correctStylishPath, 'utf-8');
+const rightForStylish = parseFile(correctStylishPath, correctStylishData);
 
 const correctPlainPath = getFixturePath('plainCorrect.txt');
-const rightForPlain = parseFile(correctPlainPath);
+const correctPlainData = fs.readFileSync(correctPlainPath, 'utf-8');
+const rightForPlain = parseFile(correctPlainPath, correctPlainData);
 
 const correctJsonPath = getFixturePath('jsonCorrect.txt');
-const rigthForJson = parseFile(correctJsonPath);
+const correctJsonData = fs.readFileSync(correctJsonPath, 'utf-8');
+const rigthForJson = parseFile(correctJsonPath, correctJsonData);
 
 test('stylishDiffWorks', () => {
   expect(genDiff(nestedJson1, nestedJson2, 'stylish')).toBe(rightForStylish);

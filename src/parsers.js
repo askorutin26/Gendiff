@@ -1,18 +1,16 @@
-import fs from 'fs';
 import path from 'path';
 import yaml from 'js-yaml';
 
-const parseFile = (filePath) => {
+const parseFile = (filePath, data) => {
   const format = path.extname(filePath);
-  const fileData = fs.readFileSync(filePath, 'utf-8');
   switch (format) {
     case '.yml':
     case '.yaml':
-      return (yaml.load(fileData));
+      return (yaml.load(data));
     case '.json':
-      return (JSON.parse(fileData));
+      return (JSON.parse(data));
     case '.txt':
-      return fileData;
+      return data;
     default:
       throw new Error(console.log(filePath));
   }
