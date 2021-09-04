@@ -1,11 +1,7 @@
-import path from 'path';
 import yaml from 'js-yaml';
-import * as fs from 'fs';
 
-const parseFile = (filePath) => {
-  const format = path.extname(filePath);
-  const data = fs.readFileSync(filePath, 'utf-8');
-  switch (format) {
+const parseFile = (extension, data) => {
+  switch (extension) {
     case '.yml':
     case '.yaml':
       return (yaml.load(data));
@@ -14,7 +10,7 @@ const parseFile = (filePath) => {
     case '.txt':
       return data;
     default:
-      throw new Error(`wrong extension type: ${format}`);
+      throw new Error(`wrong extension type: ${extension}`);
   }
 };
 export default parseFile;
