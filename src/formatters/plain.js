@@ -15,15 +15,16 @@ const plainFormat = (diffTree) => {
     const dataFiltered = data.filter(({ type }) => type !== 'unchanged');
     const result = dataFiltered.map((elem) => {
       const keys = [...key, elem.key];
+      const propertyName = keys.join('.');
       const { type, value } = elem;
       switch (type) {
         case 'added':
-          return `Property '${keys.join('.')}' was added with value: ${valueToString(value)}`;
+          return `Property '${propertyName}' was added with value: ${valueToString(value)}`;
         case 'deleted':
-          return `Property '${keys.join('.')}' was removed`;
+          return `Property '${propertyName}' was removed`;
         case 'changed': {
           const { oldValue, newValue } = elem;
-          return `Property '${keys.join('.')}' was updated. From ${valueToString(oldValue)} to ${valueToString(newValue)}`;
+          return `Property '${propertyName}' was updated. From ${valueToString(oldValue)} to ${valueToString(newValue)}`;
         }
         case 'hasChildren':
           return iter(elem.children, keys);
