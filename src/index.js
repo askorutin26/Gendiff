@@ -5,10 +5,7 @@ import parseFile from './parser.js';
 import buildDiffTree from './buildDiffTree.js';
 import formatData from './formatters/index.js';
 
-const getFullPath = (fileName) => {
-  const filePath = path.resolve(process.cwd(), fileName);
-  return filePath;
-};
+const getFullPath = (fileName) => path.resolve(process.cwd(), fileName);
 const getExtension = (filePath) => path.extname(filePath);
 const getData = (filePath) => fs.readFileSync(filePath, 'utf-8');
 
