@@ -6,7 +6,7 @@ import buildDiffTree from './buildDiffTree.js';
 import formatData from './formatters/index.js';
 
 const getFullPath = (fileName) => path.resolve(process.cwd(), fileName);
-const getExtension = (filePath) => path.extname(filePath);
+const getExtension = (filePath) => path.extname(filePath).slice(1);
 const getData = (filePath) => fs.readFileSync(filePath, 'utf-8');
 
 const genDiff = (file1, file2, formatter = 'stylish') => {
