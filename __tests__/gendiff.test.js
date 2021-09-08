@@ -21,15 +21,15 @@ const nestedYml2 = getFixturePath('file2Nested.yml');
 
 const correctStylishPath = getFixturePath('stylishCorrect.txt');
 const correctStylishData = getData(correctStylishPath);
-const rightForStylish = parseFile('.txt', correctStylishData);
+const rightForStylish = parseFile('txt', correctStylishData);
 
 const correctPlainPath = getFixturePath('plainCorrect.txt');
 const correctPlainData = getData(correctPlainPath);
-const rightForPlain = parseFile('.txt', correctPlainData);
+const rightForPlain = parseFile('txt', correctPlainData);
 
 const correctJsonPath = getFixturePath('jsonCorrect.txt');
 const correctJsonData = getData(correctJsonPath);
-const rigthForJson = parseFile('.txt', correctJsonData);
+const rigthForJson = parseFile('txt', correctJsonData);
 
 test.each([
   ['stylishDiffWorks1', nestedJson1, nestedJson2, 'stylish', rightForStylish],
