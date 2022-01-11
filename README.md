@@ -1,11 +1,18 @@
-### Hexlet tests and linter status:
+## About 
+An app that runs in console and determines the difference between two data structures.
+#Utility features:
+
+* Support for different input formats: yaml, json
+* Generating a report in plain text, stylish and json format
+
+##  Hexlet tests and linter status:
 [![Actions Status](https://github.com/askorutin26/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/askorutin26/frontend-project-lvl2/actions)
 
-### GitHub Workflow
+##  GitHub Workflow
 [![Node CI](https://github.com/askorutin26/frontend-project-lvl2/actions/workflows/nodejs.yml/badge.svg)](https://github.com/askorutin26/frontend-project-lvl2/actions/workflows/nodejs.yml)
 
 
-### CodeClimate Maintainability
+##  CodeClimate Maintainability
 [![Maintainability](https://api.codeclimate.com/v1/badges/b9cdd81eada9375fdcb5/maintainability)](https://codeclimate.com/github/askorutin26/frontend-project-lvl3/maintainability)
 
 ### CodeClimate TestCoverage
