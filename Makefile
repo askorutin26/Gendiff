@@ -2,6 +2,8 @@ install:
 	npm ci
 lint:
 	npx eslint .
+link:
+	npm link
 lint-fix:
 	npx eslint . --fix
 test:
