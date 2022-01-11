@@ -1,6 +1,6 @@
 ## About 
 An app that runs in console and determines the difference between two data structures.
-#Utility features:
+# Utility features:
 
 * Support for different input formats: yaml, json
 * Generating a report in plain text, stylish and json format
